@@ -26,14 +26,14 @@ public class MainController {
         String signature = EncryptorService.encrypt(hash, key.length());
 
         model.addAttribute("data", data);
+
         model.addAttribute("hash", hash);
         model.addAttribute("signature", signature);
+
         Document document = new Document(data, signature);
         model.addAttribute("document", document);
-
         session.setAttribute("document", document);
         session.setAttribute("key", key);
-
         return "index.html";
     }
 
