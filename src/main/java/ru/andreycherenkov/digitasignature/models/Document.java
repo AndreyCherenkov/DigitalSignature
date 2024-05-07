@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Document {
-
     private String data;
     private String signature;
-
 }

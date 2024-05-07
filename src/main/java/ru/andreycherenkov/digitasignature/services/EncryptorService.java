@@ -1,6 +1,5 @@
 package ru.andreycherenkov.digitasignature.services;
 
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +8,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 @Service
-@PropertySource("classpath:application.properties")
 public class EncryptorService {
 
     private static final int ALPHABET_SIZE = 26;

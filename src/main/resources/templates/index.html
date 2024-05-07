@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="/style.css">
+
 <head>
     <meta charset="UTF-8">
     <title>Форма для шифрования документа</title>
 </head>
 <body>
 <h1>Форма для шифрования документа</h1>
-<form action="/lab4/process" method="post">
+<form action="/lab4/process" method="post" class="center">
     <label for="data">Текст документа:</label><br>
     <textarea id="data" name="data" rows="4" cols="50"></textarea><br><br>
 
@@ -16,20 +18,22 @@
     <button type="submit">Зашифровать документ</button>
 </form>
 
-<div th:if="${data}">
-    <p><strong>Исходные данные:</strong> <span th:text="${data}"></span></p>
-</div>
+<div class="parent">
+    <div th:if="${data}" class="child">
+        <p><strong>Исходные данные:</strong> <span th:text="${data}"></span></p>
+    </div>
 
-<div th:if="${hash}">
-    <p><strong>Захешированные данные:</strong> <span th:text="${hash}"></span></p>
-</div>
-<div th:if="${signature}">
-    <p><strong>Подпись:</strong> <span th:text="${signature}"></span></p>
-</div>
+    <div th:if="${hash}" class="child">
+        <p><strong>Захешированные данные:</strong> <span th:text="${hash}"></span></p>
+    </div>
+    <div th:if="${signature}" class="child">
+        <p><strong>Подпись:</strong> <span th:text="${signature}"></span></p>
+    </div>
 
-<div th:if="${document}">
-    <a th:href="@{/lab4/modify}">Изменить данные</a><br>
-    <a th:href="@{/lab4/verify}">Верификация данных</a>
+    <div th:if="${document}" class="child">
+        <a th:href="@{/lab4/modify}">Изменить данные</a><br>
+        <a th:href="@{/lab4/verify}">Верификация данных</a>
+    </div>
 </div>
 
 </body>

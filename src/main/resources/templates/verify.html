@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="/style.css">
 <head>
     <meta charset="UTF-8">
     <title>Проверка подлинности</title>
 </head>
 <body>
 <h1>Форма проверки подлинности документа</h1>
-<div th:if="${document}">
+<div th:if="${document}" class="parent">
     <p><strong>Текст документа: </strong> <span th:text="${data}"></span></p>
 
-    <div th:if="${isOriginal}">
+    <div th:if="${isOriginal}" class="child">
         <p>Получены корректные данные</p><br>
         <img th:src="@{/ok.jpg}">
     </div>
 
-    <div th:if="${not isOriginal}">
+    <div th:if="${not isOriginal}" class="child">
         <p>Получены модифицированные данные</p> <br>
         <img th:src="@{/notok.jpg}">
     </div>

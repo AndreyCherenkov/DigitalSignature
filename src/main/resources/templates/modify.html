@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="/style.css">
 <head>
   <meta charset="UTF-8">
   <title>Форма для модификации документа</title>
@@ -7,14 +8,14 @@
 <body>
 <h1>Форма для модификации документа</h1>
 <img th:src="@{/hacker.jpg}" alt="картинка хакера" width="640" height="640">
-<form action="/lab4/modify" method="post">
+<form action="/lab4/modify" method="post" class="center">
   <label for="data">Текст документа:</label><br>
   <textarea id="data" name="data" rows="4" cols="50" th:text="${data}"></textarea><br><br>
 
   <button type="submit">Модифицировать документ</button>
 </form>
 
-<div th:if="${document}">
+<div th:if="${document}" class="center">
   <a th:href="@{/lab4/verify}">Верификация данных</a>
 </div>
 
